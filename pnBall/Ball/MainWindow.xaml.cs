@@ -20,9 +20,22 @@ namespace Ball
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
+
         public MainWindow()
         {
             InitializeComponent();
+            
+            //Timer
+            timer.Interval = TimeSpan.FromSeconds(0.05); //stellt Timerinterval
+            timer.IsEnabled = true; //eingeschaltet
+            timer.Tick += animate;  //ruft Function auf
+
+        }
+
+        void animate(object sender, EventArgs e)
+        {
+
         }
     }
 }
