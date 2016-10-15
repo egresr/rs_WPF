@@ -22,78 +22,55 @@ namespace Ball
     {
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
 
+        double vX = 1000.0; //geschwindigkeit X- Richtung --- Es sollte 3 Pixel in bestimmte Zeit Horizontal verlegt werden.
+        double vY = 500.0; //geschwindigkeit Y- Richtung --- Es sollte 3 Pixel in bestimmte Zeit Vertikal verlegt werden.
+
         public MainWindow()
         {
             InitializeComponent();
             
             //Timer
-            timer.Interval = TimeSpan.FromSeconds(0.05); //stellt Timerinterval
+            timer.Interval = TimeSpan.FromSeconds(0.005); //stellt Timerinterval
             timer.IsEnabled = true; //eingeschaltet
             timer.Tick += animate;  //ruft Function auf
-
         }
 
-        bool fliegtNachRechts = true;
-        bool fliegtNachUnten = true;
         void animate(object sender, EventArgs e)
         {
             double ballPositionX = Canvas.GetLeft(ball);
-            double ballPosistionY = Canvas.GetTop(ball);
+            double ballPositionY = Canvas.GetTop(ball);
             double breiteCanvas = myCanvas.ActualWidth;
             double hoheCanvas = myCanvas.ActualHeight;
 
 
             lblBallKoordinateX.Content = ballPositionX;
-            lblBallKoordinateY.Content = ballPosistionY;
+            lblBallKoordinateY.Content = ballPositionY;
 
-            //Horizontale bewegung
-            if(fliegtNachRechts)
-            {
-                ballPositionX += 5.0;
-            }
-            else if(!fliegtNachRechts)
-            {
-                ballPositionX -= 5.0;
-            }
-
+            //
+            //Bewegung Horizontal
+            //
+            //Horizontale Koordinaten bestimmen
+            ballPositionX += vX * timer.Interval.TotalSeconds;
             //Horizontale Richtung ueberwachen
-            if (ballPositionX + ball.Width > breiteCanvas)
-            {                
-                ballPositionX = breiteCanvas - ball.Width;
-                fliegtNachRechts = !fliegtNachRechts;
-            }
-            else if (ballPositionX < 0)
+            if (ballPositionX <= 0.0 || ballPositionX + ball.Width >= breiteCanvas)
             {
-                ballPositionX = 0;
-                fliegtNachRechts = !fliegtNachRechts;
+                vX *= -1;
             }
-
+            //Neue horizontale Position setzen
             Canvas.SetLeft(ball, ballPositionX);
 
-            //Vertikale bewegung
-            if (fliegtNachUnten)
-            {
-                ballPosistionY += 5.0;
-            }
-            else if (!fliegtNachUnten)
-            {
-                ballPosistionY -= 5.0;
-            }
-
+            //
+            //Bewegung Vertikal
+            //
+            //Vertikale Koordinate bestimmen
+            ballPositionY += vY * timer.Interval.TotalSeconds;
             //Vertikale Richtung ueberwachen
-
-            if(ballPosistionY + ball.Height > myCanvas.ActualHeight)
+            if (ballPositionY <= 0.0 || ballPositionY + ball.Height >= hoheCanvas)
             {
-                ballPosistionY = hoheCanvas - ball.Height;
-                fliegtNachUnten = !fliegtNachUnten;
+                vY *= -1;
             }
-            else if (ballPosistionY < 0)
-            {
-                ballPosistionY = 0;
-                fliegtNachUnten = !fliegtNachUnten;
-            }
-
-            Canvas.SetTop(ball, ballPosistionY);
+            //Neu vertikale Position setzen
+            Canvas.SetTop(ball, ballPositionY);
         }
     }
 }
