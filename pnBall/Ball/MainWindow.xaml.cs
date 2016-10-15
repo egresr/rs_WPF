@@ -56,6 +56,7 @@ namespace Ball
                 ballPositionX -= 5.0;
             }
 
+            //Horizontale Richtung ueberwachen
             if (ballPositionX + ball.Width > breiteCanvas)
             {                
                 ballPositionX = breiteCanvas - ball.Width;
@@ -68,6 +69,31 @@ namespace Ball
             }
 
             Canvas.SetLeft(ball, ballPositionX);
+
+            //Vertikale bewegung
+            if (fliegtNachUnten)
+            {
+                ballPosistionY += 5.0;
+            }
+            else if (!fliegtNachUnten)
+            {
+                ballPosistionY -= 5.0;
+            }
+
+            //Vertikale Richtung ueberwachen
+
+            if(ballPosistionY + ball.Height > myCanvas.ActualHeight)
+            {
+                ballPosistionY = hoheCanvas - ball.Height;
+                fliegtNachUnten = !fliegtNachUnten;
+            }
+            else if (ballPosistionY < 0)
+            {
+                ballPosistionY = 0;
+                fliegtNachUnten = !fliegtNachUnten;
+            }
+
+            Canvas.SetTop(ball, ballPosistionY);
         }
     }
 }
