@@ -21,14 +21,13 @@ namespace Kugel
     public partial class MainWindow : Window
     {
         System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer();
-        int klick = 1;
+        int klick = 0;
 
         public MainWindow()
         {
             InitializeComponent();
             timer.Tick += physics;
             timer.Interval = TimeSpan.FromSeconds(0.05);
-
         }
 
         private void rBtnRot_Click(object sender, RoutedEventArgs e)
@@ -116,8 +115,8 @@ namespace Kugel
         {
             if(timer.IsEnabled)
             {
-                lblZaehler.Content = klick;
                 klick++;
+                lblZaehler.Content = klick;
             }
 
         }
