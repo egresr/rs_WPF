@@ -33,9 +33,41 @@ namespace Ball
 
         }
 
+        bool fliegtNachRechts = true;
+        bool fliegtNachUnten = true;
         void animate(object sender, EventArgs e)
         {
+            double ballPositionX = Canvas.GetLeft(ball);
+            double ballPosistionY = Canvas.GetTop(ball);
+            double breiteCanvas = myCanvas.ActualWidth;
+            double hoheCanvas = myCanvas.ActualHeight;
 
+
+            lblBallKoordinateX.Content = ballPositionX;
+            lblBallKoordinateY.Content = ballPosistionY;
+
+            //Horizontale bewegung
+            if(fliegtNachRechts)
+            {
+                ballPositionX += 5.0;
+            }
+            else if(!fliegtNachRechts)
+            {
+                ballPositionX -= 5.0;
+            }
+
+            if (ballPositionX + ball.Width > breiteCanvas)
+            {                
+                ballPositionX = breiteCanvas - ball.Width;
+                fliegtNachRechts = !fliegtNachRechts;
+            }
+            else if (ballPositionX < 0)
+            {
+                ballPositionX = 0;
+                fliegtNachRechts = !fliegtNachRechts;
+            }
+
+            Canvas.SetLeft(ball, ballPositionX);
         }
     }
 }
