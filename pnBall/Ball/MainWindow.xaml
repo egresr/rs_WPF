@@ -5,14 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ball"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Ball" Height="350" Width="525" MouseMove="Window_MouseMove">
     <Canvas Name="myCanvas">
         <Ellipse Name="ball" Width="20" Height="20" Fill="Red" Canvas.Left="200" Canvas.Top="150"/>
-        <Canvas Name="baalKoordinaten" Height="46" Canvas.Left="280" Canvas.Top="34" Width="214">
-            <Label x:Name="lblBallKoordinateX" Content="---" Canvas.Left="135" Width="79"/>
-            <Label x:Name="lblBallKoordinateY" Content="---" Canvas.Left="135" Canvas.Top="20" RenderTransformOrigin="0.5,0.5" Width="79"/>
-            <Label x:Name="label" Content="KoordintateX :"/>
-            <Label x:Name="label_Copy" Content="KoordintateY :" Canvas.Top="20"/>
-        </Canvas>
+        <Rectangle Name="schlaegerLinks" Fill="Aqua" Width="10" Height="150" Canvas.Left="0" Canvas.Top="30"/>
+        <Rectangle Name="schlaegerRechts" Fill="Aqua" Width="10" Height="150" Canvas.Right="0" Canvas.Top="30"/>
+
+        <Label Name="lblBallKoordinateX" Content="---" Canvas.Left="135" Canvas.Top="10" Width="79"/>
+        <Label Name="lblBallKoordinateY" Content="---" Canvas.Left="135" Canvas.Top="30"  Width="80"/>
+        <Label Content="Ball X :" Canvas.Top="10" Canvas.Left="30"/>
+        <Label Content="Ball Y :" Canvas.Top="30" Canvas.Left="30"/>
+
+        <Label Name="lblMausX" Content="---" Canvas.Left="135" Canvas.Top="50" Width="79"/>
+        <Label Name="lblMausY" Content="---" Canvas.Left="135" Canvas.Top="70"  Width="80"/>
+        <Label Content="Maus X :" Canvas.Top="50" Canvas.Left="30"/>
+        <Label Content="Maus Y :" Canvas.Top="70" Canvas.Left="30"/>
+        <Label x:Name="lblSpielende" Canvas.Left="30" Canvas.Top="50" Height="231" Width="451" FontSize="80" HorizontalContentAlignment="Center" Foreground="#FFF90C0C" FontStretch="ExtraExpanded" FontWeight="ExtraBold" HorizontalAlignment="Center" IsEnabled="False"/>
+
+
     </Canvas>
 </Window>
