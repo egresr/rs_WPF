@@ -24,14 +24,14 @@ namespace Ball
 
         double vX = 500.00; //geschwindigkeit X- Richtung --- Es sollte 3 Pixel in bestimmte Zeit Horizontal verlegt werden.
         double vY = 500.0; //geschwindigkeit Y- Richtung --- Es sollte 3 Pixel in bestimmte Zeit Vertikal verlegt werden.
-        Point p;
+        Point p; //wird fuer Mauskoordinaten benutzt
 
         public MainWindow()
         {
             InitializeComponent();
 
             //Timer
-            timer.Interval = TimeSpan.FromSeconds(0.005); //stellt Timerinterval
+            timer.Interval = TimeSpan.FromSeconds(0.005); //stellt Timerinterval und damit Baal geschwindigkeit.
             timer.IsEnabled = true; //eingeschaltet
             timer.Tick += animate;  //ruft Function auf
         }
@@ -51,7 +51,7 @@ namespace Ball
 
             //
             //Ball Bewegung Horizontal
-            //            
+            //
             //Ball horizontale Richtung ueberwachen
             if (
                     (
@@ -83,6 +83,7 @@ namespace Ball
                 lblSpielende.Content = "";
             }
             Canvas.SetTop(ball, ballPositionY);//Ball neue vertikale Position setzen
+            
 
             //
             //Goals ueberwachen
@@ -100,10 +101,11 @@ namespace Ball
             //
             //Maus Koordinaten Display
             //
-            p = e.GetPosition(this);
+            p = e.GetPosition(this);//Mauskoordinanten innerhalb aktuelles Fensters
             lblMausX.Content = p.X;
             lblMausY.Content = p.Y;
 
+            //Schlaeger neue Koordianten setzen, von Mauskoordinaten abhaengig
             Canvas.SetTop(schlaegerLinks, p.Y - schlaegerLinks.Height / 2);
             Canvas.SetTop(schlaegerRechts, p.Y - schlaegerRechts.Height / 2);
         }
