@@ -52,11 +52,23 @@ namespace Ball
             //
             //Ball Bewegung Horizontal
             //            
-            ////if (ballPositionX <= 0.0 + schlaegerLinks.ActualWidth || ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth)//Ball horizontale Richtung ueberwachen
-            if ((ballPositionX <= 0.0 + schlaegerLinks.ActualWidth && ballPositionY >= Canvas.GetTop(schlaegerLinks)) || (ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth && ballPositionY > Canvas.GetTop(schlaegerRechts)))//Ball horizontale Richtung ueberwachen
-
+            //Ball horizontale Richtung ueberwachen
+            if (
+                    (
+                        ballPositionX <= 0.0 + schlaegerLinks.ActualWidth &&
+                        ballPositionY >= Canvas.GetTop(schlaegerLinks) &&
+                        ballPositionY < Canvas.GetTop(schlaegerLinks) + schlaegerLinks.ActualHeight - ball.ActualHeight
+                    )
+                    ||
+                    (
+                        ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth &&
+                        ballPositionY > Canvas.GetTop(schlaegerRechts) &&
+                        ballPositionY < Canvas.GetTop(schlaegerRechts) + schlaegerRechts.ActualHeight - ball.ActualHeight
+                    )
+                )
             {
                 vX *= -1;
+                System.Media.SystemSounds.Hand.Play();//Sound abspielen
             }
             ballPositionX += vX * timer.Interval.TotalSeconds;//Ball neue horizontale Koordinaten ausrechnen            
             Canvas.SetLeft(ball, ballPositionX);//Ball neue horizontale Position setzen
@@ -68,16 +80,18 @@ namespace Ball
             if (ballPositionY <= 0.0 || ballPositionY + ball.Height >= hoheCanvas)//Vertikale Richtung ueberwachen
             {
                 vY = -vY;
+                lblSpielende.Content = "";
             }
             Canvas.SetTop(ball, ballPositionY);//Ball neue vertikale Position setzen
 
             //
-            //Spielende ueberwachen
+            //Goals ueberwachen
             //
 
             if (ballPositionX <= 0.0 || ballPositionX > breiteCanvas - ball.ActualWidth)
             {
-                lblSpielende.Content = "TOR !!!";
+                vX *= -1;
+                lblSpielende.Content = "GOAL !!!";
             }
         }
 
