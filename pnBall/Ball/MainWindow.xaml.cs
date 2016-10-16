@@ -52,10 +52,12 @@ namespace Ball
             //
             //Ball Bewegung Horizontal
             //            
-            if (ballPositionX <= 0.0 + schlaegerLinks.ActualWidth || ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth)//Ball horizontale Richtung ueberwachen
+            ////if (ballPositionX <= 0.0 + schlaegerLinks.ActualWidth || ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth)//Ball horizontale Richtung ueberwachen
+            if ((ballPositionX <= 0.0 + schlaegerLinks.ActualWidth && ballPositionY >= Canvas.GetTop(schlaegerLinks)) || (ballPositionX >= breiteCanvas - ball.Width - schlaegerRechts.ActualWidth && ballPositionY > Canvas.GetTop(schlaegerRechts)))//Ball horizontale Richtung ueberwachen
+
             {
                 vX *= -1;
-            }            
+            }
             ballPositionX += vX * timer.Interval.TotalSeconds;//Ball neue horizontale Koordinaten ausrechnen            
             Canvas.SetLeft(ball, ballPositionX);//Ball neue horizontale Position setzen
 
@@ -66,8 +68,17 @@ namespace Ball
             if (ballPositionY <= 0.0 || ballPositionY + ball.Height >= hoheCanvas)//Vertikale Richtung ueberwachen
             {
                 vY = -vY;
-            }            
+            }
             Canvas.SetTop(ball, ballPositionY);//Ball neue vertikale Position setzen
+
+            //
+            //Spielende ueberwachen
+            //
+
+            if (ballPositionX <= 0.0 || ballPositionX > breiteCanvas - ball.ActualWidth)
+            {
+                lblSpielende.Content = "TOR !!!";
+            }
         }
 
         private void Window_MouseMove(object sender, MouseEventArgs e)
