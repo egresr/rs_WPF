@@ -32,12 +32,21 @@ namespace Kalender
 
         private void datumGeaendert(object sender, SelectionChangedEventArgs e)
         {
-            TimeSpan? timeSpan = klndrStartDatum.SelectedDate - DateTime.Today;
+            TimeSpan? timeSpanVoll = klndrStartDatum.SelectedDate - DateTime.Now;//Gibt Datum und Uhrzeit
 
-            lblSekunden.Content = timeSpan.Value.TotalSeconds;
-            lblMinuten.Content = timeSpan.Value.TotalMinutes;
-            lblStunden.Content = timeSpan.Value.TotalHours;
-            lblTagen.Content = timeSpan.Value.Days;
+            TimeSpan? timeSpanDatum = klndrStartDatum.SelectedDate - DateTime.Today;//Gibt nur Datum
+
+            lblSekunden.Content = timeSpanVoll.Value.Seconds;
+            lblTotalSekunden.Content = timeSpanVoll.Value.TotalSeconds;
+
+            lblMinuten.Content = timeSpanVoll.Value.Minutes;
+            lblTotalMinuten.Content = timeSpanVoll.Value.TotalMinutes;
+
+            lblStunden.Content = timeSpanVoll.Value.Hours;
+            lblTotalStunden.Content = timeSpanVoll.Value.TotalHours;
+
+            lblTagen.Content = timeSpanDatum.Value.Days;
+            lblTotalTagen.Content = timeSpanVoll.Value.TotalDays;
         }
     }
 }
