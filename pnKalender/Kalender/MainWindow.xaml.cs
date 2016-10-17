@@ -47,6 +47,8 @@ namespace Kalender
 
             lblTagen.Content = timeSpanDatum.Value.Days;
             lblTotalTagen.Content = timeSpanVoll.Value.TotalDays;
+
+            lblTestVonMac.Content = "lblTestVonMac wurde am MAC hinzugefügt"
         }
     }
 }
