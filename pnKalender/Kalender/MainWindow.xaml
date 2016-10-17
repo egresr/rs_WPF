@@ -7,24 +7,24 @@
         mc:Ignorable="d"
         Title="Zeitspanne" Height="350" Width="525">
     <Grid>
-        <Label x:Name="lblTagen" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,230,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="lblTagen" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,218,0,0" Background="#FFBAF5EB" Height="25"/>
         <Calendar x:Name="klndrStartDatum" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" SelectedDatesChanged="datumGeaendert"/>
         <Button x:Name="button" Content="Klick mich!" HorizontalAlignment="Left" Margin="22,209,0,0" VerticalAlignment="Top" Width="110" Height="42" Click="button_Click"/>
-        <Label x:Name="label" Content="Tagen" HorizontalAlignment="Left" Margin="210,230,0,0" VerticalAlignment="Top" Width="78" Height="25"/>
-        <Label x:Name="lblMinuten" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,90,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="lblStunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,160,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="label_Copy" Content="Minuten" HorizontalAlignment="Left" Margin="210,90,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
-        <Label x:Name="label1_Copy" Content="Stunden" HorizontalAlignment="Left" Margin="210,160,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
+        <Label x:Name="label" Content="Tagen" HorizontalAlignment="Left" Margin="210,217,0,0" VerticalAlignment="Top" Width="78" Height="25"/>
+        <Label x:Name="lblMinuten" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,84,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="lblStunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,148,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="label_Copy" Content="Minuten" HorizontalAlignment="Left" Margin="210,84,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
+        <Label x:Name="label1_Copy" Content="Stunden" HorizontalAlignment="Left" Margin="210,148,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
         <Label x:Name="label1" Content="Sekunden" HorizontalAlignment="Left" Margin="210,20,0,0" VerticalAlignment="Top" Width="119" Height="25"/>
         <Label x:Name="lblSekunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,20,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="lblTotalTagen" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,260,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="label_Copy1" Content="Tagen (Total)" HorizontalAlignment="Left" Margin="210,260,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
-        <Label x:Name="lblTotalStunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,190,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="label1_Copy1" Content="Stunden (Total)" HorizontalAlignment="Left" Margin="210,190,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
-        <Label x:Name="lblTotalMinuten" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,120,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="label_Copy2" Content="Minuten (Total)" HorizontalAlignment="Left" Margin="210,120,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
+        <Label x:Name="lblTotalTagen" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,247,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="label_Copy1" Content="Tagen (Total)" HorizontalAlignment="Left" Margin="210,247,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
+        <Label x:Name="lblTotalStunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,178,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="label1_Copy1" Content="Stunden (Total)" HorizontalAlignment="Left" Margin="210,178,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
+        <Label x:Name="lblTotalMinuten" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,114,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="label_Copy2" Content="Minuten (Total)" HorizontalAlignment="Left" Margin="210,114,0,0" VerticalAlignment="Top" Width="103" Height="25"/>
         <Label x:Name="label1_Copy2" Content="Sekunden (Total)" HorizontalAlignment="Left" Margin="210,50,0,0" VerticalAlignment="Top" Width="119" Height="25"/>
         <Label x:Name="lblTotalSekunden" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="350,50,0,0" Background="#FFBAF5EB" Height="25"/>
-        <Label x:Name="lblTestVonMac" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="147" Margin="10,60,0,0" Background="#FFBAF5EB" Height="25"/>
+        <Label x:Name="lblTestVonMac" Content="---" HorizontalAlignment="Left" VerticalAlignment="Top" Width="475" Margin="22,281,0,0" Background="#FFF0F5BA" Height="25" Foreground="#FFF50E0E" FontWeight="ExtraBold"/>
     </Grid>
 </Window>

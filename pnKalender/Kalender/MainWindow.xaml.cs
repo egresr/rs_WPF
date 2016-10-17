@@ -27,6 +27,7 @@ namespace Kalender
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            lblTestVonMac.Content = "Label \"lblTestVonMac\" wurde am MAC hinzugefügt und über GIT synchronisiert";
             MessageBox.Show("Hallo!");
         }
 
@@ -48,7 +49,7 @@ namespace Kalender
             lblTagen.Content = timeSpanDatum.Value.Days;
             lblTotalTagen.Content = timeSpanVoll.Value.TotalDays;
 
-            lblTestVonMac.Content = "lblTestVonMac wurde am MAC hinzugefügt";
+            
         }
     }
 }
