@@ -24,5 +24,12 @@ namespace Taschenrechner
         {
             InitializeComponent();
         }
+
+
+        private void btnZiffer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

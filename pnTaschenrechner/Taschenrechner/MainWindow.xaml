@@ -7,21 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,72,0,0"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,72,0,0" Height="50"/>
-        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,72,0,0" Height="50"/>
-        <Button x:Name="button_Copy2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,132,0,0"/>
-        <Button x:Name="button_Copy3" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,132,0,0" Height="50"/>
-        <Button x:Name="button_Copy4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,132,0,0" Height="50"/>
-        <Button x:Name="button_Copy5" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,192,0,0"/>
-        <Button x:Name="button_Copy6" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,192,0,0" Height="50"/>
-        <Button x:Name="button_Copy7" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,192,0,0" Height="50"/>
-        <Button x:Name="button_Copy8" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="8,252,0,0" Height="50"/>
-        <Button x:Name="button_Copy9" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="208,72,0,0" Height="50"/>
-        <Button x:Name="button_Copy10" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="208,132,0,0" Height="50"/>
-        <Button x:Name="button_Copy11" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="208,192,0,0" Height="50"/>
-        <Button x:Name="button_Copy12" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="208,252,0,0" Height="50"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="248"/>
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,72,0,0" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,72,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,72,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,132,0,0" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,132,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,132,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="8,192,0,0" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="68,192,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="128,192,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="8,252,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Medium" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btnGleich" Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="209,252,0,0" Height="50" FontSize="32" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFE9FBEE" BorderBrush="#FF50F910"/>
+
+        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="209,132,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFD3D5F9" BorderBrush="#FF0C18F5"/>
+        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="209,192,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFD3D5F9" BorderBrush="#FF0C18F5"/>
+        <Button x:Name="btnMal" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="264,132,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFD3D5F9" BorderBrush="#FF0C18F5"/>
+        <Button x:Name="btnTeilen" Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="264,192,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFD3D5F9" BorderBrush="#FF0C18F5"/>
+
+        <TextBox x:Name="txtBx" HorizontalAlignment="Left" Height="49" Margin="10,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="249" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="32" FontWeight="Bold" FontFamily="Arial" BorderBrush="#FF101111" AllowDrop="False" Background="#FFF8FBDB" Foreground="#FF0C18F5"/>
+        <Button x:Name="btnReset" Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="264,10,0,0" Height="50" FontSize="28" FontFamily="Tahoma" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFBEDE9" BorderBrush="#FFF90B00" Foreground="#FFF90B00"/>
+
+
 
     </Grid>
 </Window>
