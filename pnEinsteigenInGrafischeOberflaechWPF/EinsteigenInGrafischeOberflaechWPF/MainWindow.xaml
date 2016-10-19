@@ -29,5 +29,13 @@
         <Button x:Name="btnOk" Content="OK" Grid.Column="1" HorizontalAlignment="Left" Margin="144,9,0,0" Grid.Row="1" VerticalAlignment="Top" Width="34" Click="btnOk_Click"/>
         <CheckBox x:Name="chckBxBahnCard" Content="BahnCard" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="PruefeCheckboxen" Unchecked="PruefeCheckboxen"/>
         <CheckBox x:Name="chckBxHandybereich" Content="Handybereich" Grid.Column="2" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="PruefeCheckboxen" Unchecked="PruefeCheckboxen"/>
+        <Menu x:Name="menu" Grid.ColumnSpan="3" Margin="0,0,0,30" >
+            <MenuItem Header="Datei">
+                <MenuItem Header="AAA" Name="mItmAaa" HorizontalAlignment="Left" Width="140" Click="mItmAaa_Click"/>
+                <MenuItem Header="BBB" HorizontalAlignment="Left" Width="140"/>
+            </MenuItem>
+            <MenuItem Header="Bearbeiten"/>
+            <MenuItem Header="Hilfe"/>
+        </Menu>
     </Grid>
 </Window>

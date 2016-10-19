@@ -52,5 +52,10 @@ namespace EinsteigenInGrafischeOberflaechWPF
                 textBlock.Text = "Nicht beide angehkt";
             }
         }
+
+        private void mItmAaa_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("AAAAAAAAAAAAAAA");
+        }
     }
 }
