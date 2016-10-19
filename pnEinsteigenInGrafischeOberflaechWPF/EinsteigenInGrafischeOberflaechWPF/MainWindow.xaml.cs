@@ -39,5 +39,18 @@ namespace EinsteigenInGrafischeOberflaechWPF
         {
             textBlock.Text = dtPckr.SelectedDate.ToString();
         }
+
+
+        private void PruefeCheckboxen(object sender, RoutedEventArgs e)
+        {
+            if (chckBxBahnCard.IsChecked == true && chckBxHandybereich.IsChecked == true)//==true weil von Typ "bool?", also nicht nur "true", "false" aber auch "weis nicht"
+            {
+                textBlock.Text = "Beide angehakt!";
+            }
+            else
+            {
+                textBlock.Text = "Nicht beide angehkt";
+            }
+        }
     }
 }

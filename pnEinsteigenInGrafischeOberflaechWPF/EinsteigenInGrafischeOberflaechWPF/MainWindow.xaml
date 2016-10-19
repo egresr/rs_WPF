@@ -27,5 +27,7 @@
         <DatePicker Name="dtPckr" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="10,8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="165"/>
         <Button x:Name="btnOk" Content="OK" Grid.Column="1" HorizontalAlignment="Left" Margin="144,9,0,0" Grid.Row="1" VerticalAlignment="Top" Width="34" Click="btnOk_Click"/>
+        <CheckBox x:Name="chckBxBahnCard" Content="BahnCard" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="PruefeCheckboxen" Unchecked="PruefeCheckboxen"/>
+        <CheckBox x:Name="chckBxHandybereich" Content="Handybereich" Grid.Column="2" HorizontalAlignment="Left" Margin="10,40,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="PruefeCheckboxen" Unchecked="PruefeCheckboxen"/>
     </Grid>
 </Window>
