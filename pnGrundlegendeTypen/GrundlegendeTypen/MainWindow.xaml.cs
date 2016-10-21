@@ -133,15 +133,15 @@ namespace GrundlegendeTypen
 
             string s = m.ToString();
             int nn = (int)m;
-            string tt = Enum.GetName(typeof(State), 1);
-            State uu = (State)Enum.Parse(typeof(State), "HalfPower");
-            int vv = (int)Enum.Parse(typeof(State), "HalfPower");
+            string tt = Enum.GetName(typeof(State), 1); //Aufzaehlungswerte von Zahlen nach Zeichenkette wandeln
+            State uu = (State)Enum.Parse(typeof(State), "HalfPower"); // Zustand ermitteln
+            int vv = (int)Enum.Parse(typeof(State), "HalfPower");//Aufzaehlungswerte von Zeichenkette nach Zahl wandeln
 
 
 
 
 
-            int stop = 1111;
+            int stop = 111; //nur als Haltepunkt benutzt
         }
         //
         //Array Functionen
