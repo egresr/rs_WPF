@@ -24,6 +24,8 @@ namespace Kleckse_Teil1
         double[,] xy = new double[numPoints, 2]; // mehrdimensionale Array fuer Kleks Koordinaten
         double[][] distanz = new double[numPoints][]; // jagged Array fuer Abstaende zwischen Kleks
         Ellipse[] ellipses = new Ellipse[numPoints]; // eindimensionale Array von Typ "Ellipse"
+        Brush[] brushes = new Brush[3];
+
 
         Random random = new Random();
 
@@ -50,10 +52,14 @@ namespace Kleckse_Teil1
                 }
             }
 
+            brushes[0] = Brushes.Red;
+            brushes[1] = Brushes.Green;
+            brushes[2] = Brushes.Blue;
+
             for (int i = 0; i < numPoints; i++) // Kleckse erstellen
             {
                 Ellipse myEllipse = new Ellipse();
-                myEllipse.Fill = Brushes.Blue; //Farbe fuer Kleckse
+                myEllipse.Fill = brushes[random.Next(3)]; //Farbe fuer Kleckse
                 myEllipse.Width = 10.0;
                 myEllipse.Height = 10.0;
                 myCanvas.Children.Add(myEllipse); // Kleckse Ausgabe
