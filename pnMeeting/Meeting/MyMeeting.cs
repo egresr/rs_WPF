@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Meeting
 {
-    class Meeting
+    class MyMeeting
     {
         //Felder, Instanzvariablen, Attribute
         DateTime when; //wann
@@ -14,12 +14,17 @@ namespace Meeting
         string title;
 
         //Methode
-        public bool IsNow() // ist Aktuell (jetzt)
+        public bool IstAktuell() // ist Aktuell (jetzt)
                             //wenn "public" -> IsNow.
                             //wenn "privat" -> isNow.
         {
             DateTime now = DateTime.Now;
             return now >= when && now <= when + duration;
+        }
+
+        public void Verschieben (double stunden)
+        {
+            when += TimeSpan.FromHours(stunden);
         }
     }
 }

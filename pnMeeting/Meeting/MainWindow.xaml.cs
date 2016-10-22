@@ -23,6 +23,18 @@ namespace Meeting
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            MyMeeting m = new MyMeeting();
+            if (m.IstAktuell())
+            {
+                //...
+            }
+
+            m.Verschieben(1.5);
         }
     }
 }
