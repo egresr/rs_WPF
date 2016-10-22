@@ -104,10 +104,6 @@ namespace Kleckse_Teil1
                 Canvas.SetLeft(ellipses[i], xy[i, 0]); // Klecks an "Canvas" positionieren
                 Canvas.SetTop(ellipses[i], xy[i, 1]); // Klecks an "Canvas" positionieren
             }
-        }
-
-
-
-
+        }   
     }
 }
