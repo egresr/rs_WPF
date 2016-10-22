@@ -20,20 +20,15 @@ namespace Kleckse_Teil1
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int numPoints = 10000; //Klecks Anzahl
+        const int numPoints = 5; //Klecks Anzahl
         double[,] xy = new double[numPoints, 2]; // mehrdimensionale Array fuer Kleks Koordinaten
         double[][] distanz = new double[numPoints][]; // jagged Array fuer Abstaende zwischen Kleks
         Ellipse[] ellipses = new Ellipse[numPoints]; // eindimensionale Array von Typ "Ellipse"
-        Brush[] brushes = new Brush[5];
-
+        Brush[] brushes = new Brush[5];     
 
         Random random = new Random();
 
-        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer(); // Timer erzeugen
-
-
-
-
+        System.Windows.Threading.DispatcherTimer timer = new System.Windows.Threading.DispatcherTimer(); // Timer erzeugen         
 
         public MainWindow()
         {
@@ -62,7 +57,7 @@ namespace Kleckse_Teil1
             for (int i = 0; i < numPoints; i++) // Kleckse erstellen
             {
                 Ellipse myEllipse = new Ellipse();
-                myEllipse.Fill = brushes[i % brushes.Length]; //Farbe fuer Kleckse
+                myEllipse.Fill = brushes[i % brushes.Length]; //Farbe fuer Kleckse 
                 myEllipse.Width = 5.0;
                 myEllipse.Height = 5.0;
                 myCanvas.Children.Add(myEllipse); // Kleckse Ausgabe
@@ -72,8 +67,6 @@ namespace Kleckse_Teil1
             timer.Interval = TimeSpan.FromSeconds(0.1); // Timer interval
             timer.Tick += layout; // Methode die aufgerufen werden soll !!! += !!! nutzen
             timer.IsEnabled = true; // Timer einschalten
-
-            string testStopPoint = "###STOP###STOP###STOP###";
         }
 
         void layout(object sender, EventArgs e)
