@@ -41,15 +41,19 @@ namespace Kleckse_Teil1
 
             for (int i = 0; i < numPoints; i++)
             {
-                distanz[i] = new double [i]; // jagged Array mit leeren eindimensionalen Array's fuellen
+                distanz[i] = new double[i]; // jagged Array mit leeren eindimensionalen Array's fuellen
             }
 
-            for (int i = 0; i < distanz.Length; i++) 
+            for (int i = 0; i < distanz.Length; i++)
             {
                 for (int j = 0; j < distanz[i].Length; j++)
                 {
                     distanz[i][j] = random.NextDouble() * 100.0; //jagged Array mit Random Daten fuellen
                 }
+
+                xy[i, 0] = random.NextDouble() + 0.5 * Width;
+                xy[i, 1] = random.NextDouble() + 0.5 * Height;
+
             }
 
             brushes[0] = Brushes.Red;
@@ -60,19 +64,15 @@ namespace Kleckse_Teil1
             {
                 Ellipse myEllipse = new Ellipse();
                 myEllipse.Fill = brushes[random.Next(3)]; //Farbe fuer Kleckse
-                myEllipse.Width = 10.0;
-                myEllipse.Height = 10.0;
+                myEllipse.Width = 15.0;
+                myEllipse.Height = 15.0;
                 myCanvas.Children.Add(myEllipse); // Kleckse Ausgabe
-
                 ellipses[i] = myEllipse;
             }
-
 
             timer.Interval = TimeSpan.FromSeconds(0.1); // Timer interval
             timer.Tick += layout; // Methode die aufgerufen werden soll !!! += !!! nutzen
             timer.IsEnabled = true; // Timer einschalten
-
-
 
             string testStopPoint = "###STOP###STOP###STOP###";
         }
@@ -82,8 +82,26 @@ namespace Kleckse_Teil1
             Ellipse myEllipse = new Ellipse();
             for (int i = 0; i < numPoints; i++)
             {
-                xy[i, 0] += 5 * random.NextDouble(); // neue Random x- Koordinate
-                xy[i, 1] += 5 * random.NextDouble(); // neue Random y- Koordinate
+                for (int j = 0; j < numPoints; j++)
+                {
+                    double dx = xy[i, 0] - xy[j, 0];
+                    double dy = xy[i, 1] - xy[j, 1];
+
+                    double dist = Math.Sqrt(dx * dx + dy * dy);
+
+                    if(dist < distanz[i][j])
+                    {
+                        xy[i, 0] += dx / dist;
+                        xy[i, 1] += dy / dist;
+
+                        xy[j, 0] -= dx / dist;
+                        xy[j, 1] -= dy / dist;
+                    }
+                    string stop = "####################################";
+                }
+
+                //xy[i, 0] += 2 * random.NextDouble(); // neue Random x- Koordinate
+                //xy[i, 1] += 2 * random.NextDouble(); // neue Random y- Koordinate
             }
 
             for (int i = 0; i < numPoints; i++) // Kleckse erstellen
@@ -92,5 +110,9 @@ namespace Kleckse_Teil1
                 Canvas.SetTop(ellipses[i], xy[i, 1]); // Klecks an "Canvas" positionieren
             }
         }
+
+
+
+
     }
 }
