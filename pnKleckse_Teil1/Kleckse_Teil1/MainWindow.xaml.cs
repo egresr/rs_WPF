@@ -20,11 +20,11 @@ namespace Kleckse_Teil1
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int numPoints = 5; //Klecks Anzahl
+        const int numPoints = 10000; //Klecks Anzahl
         double[,] xy = new double[numPoints, 2]; // mehrdimensionale Array fuer Kleks Koordinaten
         double[][] distanz = new double[numPoints][]; // jagged Array fuer Abstaende zwischen Kleks
         Ellipse[] ellipses = new Ellipse[numPoints]; // eindimensionale Array von Typ "Ellipse"
-        Brush[] brushes = new Brush[3];
+        Brush[] brushes = new Brush[5];
 
 
         Random random = new Random();
@@ -42,11 +42,8 @@ namespace Kleckse_Teil1
             for (int i = 0; i < numPoints; i++)
             {
                 distanz[i] = new double[i]; // jagged Array mit leeren eindimensionalen Array's fuellen
-            }
 
-            for (int i = 0; i < distanz.Length; i++)
-            {
-                for (int j = 0; j < distanz[i].Length; j++)
+                for (int j = 0; j < i; j++)
                 {
                     distanz[i][j] = random.NextDouble() * 100.0; //jagged Array mit Random Daten fuellen
                 }
@@ -59,13 +56,15 @@ namespace Kleckse_Teil1
             brushes[0] = Brushes.Red;
             brushes[1] = Brushes.Green;
             brushes[2] = Brushes.Blue;
+            brushes[3] = Brushes.Brown;
+            brushes[4] = Brushes.Cyan;
 
             for (int i = 0; i < numPoints; i++) // Kleckse erstellen
             {
                 Ellipse myEllipse = new Ellipse();
-                myEllipse.Fill = brushes[random.Next(3)]; //Farbe fuer Kleckse
-                myEllipse.Width = 15.0;
-                myEllipse.Height = 15.0;
+                myEllipse.Fill = brushes[i % brushes.Length]; //Farbe fuer Kleckse
+                myEllipse.Width = 5.0;
+                myEllipse.Height = 5.0;
                 myCanvas.Children.Add(myEllipse); // Kleckse Ausgabe
                 ellipses[i] = myEllipse;
             }
@@ -82,14 +81,14 @@ namespace Kleckse_Teil1
             Ellipse myEllipse = new Ellipse();
             for (int i = 0; i < numPoints; i++)
             {
-                for (int j = 0; j < numPoints; j++)
+                for (int j = 0; j < i; j++)
                 {
                     double dx = xy[i, 0] - xy[j, 0];
                     double dy = xy[i, 1] - xy[j, 1];
 
                     double dist = Math.Sqrt(dx * dx + dy * dy);
 
-                    if(dist < distanz[i][j])
+                    if (dist < distanz[i][j])
                     {
                         xy[i, 0] += dx / dist;
                         xy[i, 1] += dy / dist;
@@ -97,11 +96,7 @@ namespace Kleckse_Teil1
                         xy[j, 0] -= dx / dist;
                         xy[j, 1] -= dy / dist;
                     }
-                    string stop = "####################################";
                 }
-
-                //xy[i, 0] += 2 * random.NextDouble(); // neue Random x- Koordinate
-                //xy[i, 1] += 2 * random.NextDouble(); // neue Random y- Koordinate
             }
 
             for (int i = 0; i < numPoints; i++) // Kleckse erstellen

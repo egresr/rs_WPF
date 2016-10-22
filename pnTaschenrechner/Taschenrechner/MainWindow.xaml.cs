@@ -20,6 +20,9 @@ namespace Taschenrechner
     /// </summary>
     public partial class MainWindow : Window
     {
+        double operand1 = 0;
+        double operand2 = 0;
+        enum Oprtr { Keine, Sum, Dif, Mal, Teil}
         public MainWindow()
         {
             InitializeComponent();
@@ -28,8 +31,35 @@ namespace Taschenrechner
 
         private void btnZiffer_Click(object sender, RoutedEventArgs e)
         {
-
+            EingabeZiffer(sender as Button);
         }
+
+        private void btnOperation_Click(object sender, RoutedEventArgs e)
+        {
+            EingabeOperation(sender as Button);
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            txtBx.Text = "0";
+        }
+
+        private void EingabeZiffer(Button btnNr)
+        {
+            txtBx.Text += btnNr.Content;
+            operand1 = Convert.ToDouble(txtBx.Text);
+            lblOperand1.Content = operand1;
+        }
+
+        private void EingabeOperation(Button btnNr)
+        {
+            switch (Oprtr)
+            {
+                default:
+                    break;
+            }
+        }
+
 
     }
 }
