@@ -19,7 +19,7 @@ namespace Meeting
         //TimeSpan duration = TimeSpan.FromHours(2.0); //dauer
         //string title = "Unbenannt";
 
-        //6
+        //6 Konstriktor, Konstruktor ueberladen
         public MyMeeting() // Parameterlose Konstruktor, Standardkonstruktor, default constructor
         {
             when = DateTime.Now;
@@ -62,7 +62,7 @@ namespace Meeting
             return now >= when && now <= when + duration;
         }
 
-        //4 Methoden überladen, Overloading
+        //4 Methoden ueberladen, Overloading
         public void Verschieben(double stunden)
         {
             when += TimeSpan.FromHours(stunden);
