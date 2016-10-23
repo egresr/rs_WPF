@@ -20,12 +20,12 @@ namespace Meeting
         //string title = "Unbenannt";
 
         //6
-        //public MyMeeting() //Standardkonstruktor, default constructor
-        //{
-        //    when = DateTime.Now;
-        //    duration = TimeSpan.FromHours(2.0);
-        //    title = "Unbenannt";
-        //}
+        public MyMeeting() // Parameterlose Konstruktor, Standardkonstruktor, default constructor
+        {
+            when = DateTime.Now;
+            duration = TimeSpan.FromHours(2.0);
+            title = "Unbenannt";
+        }
 
         //7 Konstruktor mit Parameter
         public MyMeeting(double hours)
@@ -44,12 +44,12 @@ namespace Meeting
         //}
 
         //10 Konstruktor mit Parameter
-        //public MyMeeting(DateTime when, TimeSpan duration, string title)
-        //{
-        //    this.when = when;               //this- Verweis auf aktuelle Instanz
-        //    this.duration = duration;       //this.variable- Verweis auf variable von aktuelle Instanz
-        //    this.title = title;
-        //}
+        public MyMeeting(DateTime when, TimeSpan duration, string title)
+        {
+            this.when = when;               //this- Verweis auf aktuelle Instanz
+            this.duration = duration;       //this.variable- Verweis auf variable von aktuelle Instanz
+            this.title = title;
+        }
 
         //2
         //Methode
@@ -61,6 +61,7 @@ namespace Meeting
             //3
             return now >= when && now <= when + duration;
         }
+
         //4 Methoden überladen, Overloading
         public void Verschieben(double stunden)
         {
@@ -70,6 +71,25 @@ namespace Meeting
         public void Verschieben(TimeSpan ts)
         {
             when += ts;
+        }
+
+        //11 Getter und Setter
+        //public TimeSpan get_Druation()
+        //{
+        //    return duration;
+        //}
+
+        //public void set_Duration(TimeSpan duration)
+        //{
+        //    this.duration = duration;
+        //}
+
+        //13
+        // Properties
+        public TimeSpan Duration
+        {
+            get{ return duration; }
+            set{ duration = value; }
         }
     }
 }

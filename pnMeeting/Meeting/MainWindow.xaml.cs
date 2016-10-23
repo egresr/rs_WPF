@@ -38,7 +38,19 @@ namespace Meeting
             }
 
             m.Verschieben(14253);
-            m1.Verschieben(2);
-        }
+
+            //12
+            //m.set_Duration(m.get_Druation() + TimeSpan.FromHours(2.0));
+
+            //13
+            TimeSpan ts = m.Duration; // Aktuelle Dauer wird geholt
+            m.Duration += TimeSpan.FromHours(1.5); // Aktuelle Dauer wird geholt und um 1,5 erhoht
+
+
+
+
+
+            string stopStop = "+++ STOP +++ STOP +++";
+         }
     }
-}
+}               
