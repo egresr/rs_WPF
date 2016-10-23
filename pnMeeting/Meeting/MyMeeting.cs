@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Meeting
 {
+    //1
     class MyMeeting
     {
         //Felder, Instanzvariablen, Attribute
@@ -13,18 +14,62 @@ namespace Meeting
         TimeSpan duration; //dauer
         string title;
 
-        //Methode
-        public bool IstAktuell() // ist Aktuell (jetzt)
-                            //wenn "public" -> IsNow.
-                            //wenn "privat" -> isNow.
+        //5 Direkte Initialisierung
+        //DateTime when = DateTime.Now; //wann
+        //TimeSpan duration = TimeSpan.FromHours(2.0); //dauer
+        //string title = "Unbenannt";
+
+        //6
+        //public MyMeeting() //Standardkonstruktor, default constructor
+        //{
+        //    when = DateTime.Now;
+        //    duration = TimeSpan.FromHours(2.0);
+        //    title = "Unbenannt";
+        //}
+
+        //7 Konstruktor mit Parameter
+        public MyMeeting(double hours)
         {
-            DateTime now = DateTime.Now;
-            return now >= when && now <= when + duration;
+            when = DateTime.Now;
+            duration = TimeSpan.FromHours(hours);
+            title = "Unbenannt";
         }
 
-        public void Verschieben (double stunden)
+        //9 Konstruktor mit Parameter
+        //public MyMeeting(DateTime a, TimeSpan b, string c)
+        //{
+        //    when = a;
+        //    duration = b;
+        //    title = c;
+        //}
+
+        //10 Konstruktor mit Parameter
+        //public MyMeeting(DateTime when, TimeSpan duration, string title)
+        //{
+        //    this.when = when;               //this- Verweis auf aktuelle Instanz
+        //    this.duration = duration;       //this.variable- Verweis auf variable von aktuelle Instanz
+        //    this.title = title;
+        //}
+
+        //2
+        //Methode
+        public bool IstAktuell() // ist Aktuell (jetzt)
+                                 //wenn "public" -> IsNow.
+                                 //wenn "privat" -> isNow.
+        {
+            DateTime now = DateTime.Now;
+            //3
+            return now >= when && now <= when + duration;
+        }
+        //4 Methoden überladen, Overloading
+        public void Verschieben(double stunden)
         {
             when += TimeSpan.FromHours(stunden);
+        }
+
+        public void Verschieben(TimeSpan ts)
+        {
+            when += ts;
         }
     }
 }

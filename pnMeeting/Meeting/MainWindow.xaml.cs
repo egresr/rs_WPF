@@ -28,13 +28,17 @@ namespace Meeting
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
+            //8
             MyMeeting m = new MyMeeting();
+            MyMeeting m1 = new MyMeeting(23.0);
+
             if (m.IstAktuell())
             {
                 //...
             }
 
-            m.Verschieben(1.5);
+            m.Verschieben(14253);
+            m1.Verschieben(2);
         }
     }
 }
