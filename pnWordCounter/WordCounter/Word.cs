@@ -11,29 +11,21 @@ namespace WordCounter
         string text;
         uint count;
 
-        //public Word()
-        //{
-
-        //}
-
         public string Text
         {
-            get
-            {
-                return text;
-            }
-            set
-            {
-                value.Trim();
-                if (value != " ")
-                    text = value;
-            }
+            get { return text; }
+        }
+
+        public Word(string text)
+        {
+            this.text = text;
+            count = 1;
         }
 
         public uint Count
         {
-            get { return count; }
-            set { count += 1; }
+            get { return count; } 
+            set { count += value; }
         }
     }
 }

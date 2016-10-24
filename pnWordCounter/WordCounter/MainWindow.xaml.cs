@@ -41,32 +41,41 @@ namespace WordCounter
                 string text = File.ReadAllText(dialog.FileName);
                 string[] parts = text.Split(new char[] { ' ', '.', ':', ';', '?', '!', '"', '\n', '\r' }); // string "text" trennen. 
                                                                                                            // als Trennzeichen werden die Zeichen
-                                                                                                           // aus neu erstellten Array benutzt.
+                                                                                                           // aus neu erstellten Array benutzt.  
                                                                                                            // und die getrennte Woerter in
                                                                                                            // array "parts" speichern.
-                List<Word> words = new List<Word>();
-                int zaehlerTest = 0;
-                foreach (var item in parts)
-                {
-                    lblTest.Content = " ###";
-                    foreach (var word in words)
-                    {
-                        if (word.Text == item)
-                        {
-                            //TODO: ...
-                            zaehlerTest++;
-                            MessageBox.Show(zaehlerTest.ToString());
-                            break;
-                        }
-                    }
-                    Word wrd = new Word();
 
-                    words.Add(wrd);
-                    lblTest.Content = " 000";
+                lblTest.Content = dialog.FileName;
+
+                List<Word> words = new List<Word>();    
+
+                for (int i = 0; i < parts.Length; i++) // fuer jeden element aus Array "parts"
+                {
+                    if (parts[i] != "") // pruefen ob string leer ist
+                    {
+                        bool istVorhanden = false;
+                        for (int j = 0; j < words.Count; j++) // fuer jeden objekt "word" aus Liste "words"
+                        {
+                            if (words[j].Text == parts[i]) // vergleichen string aus Array parts mit jedem Feld "text" von Objekt "word" aus Liste "words"  
+                            {
+                                words[j].Count = 1;  
+                                istVorhanden = true; 
+                                break;
+                            }
+                        }
+
+                        if (!istVorhanden)
+                            words.Add(new Word(parts[i].Trim())); //wenn keine uebereinstimmungen in pruefung Zeile 59, dann
+                                                                  // in Liste "words" neus Objekt typ Word erstellen.
+                    }
                 }
 
+                var tmpAlphabet = words.OrderBy(x => x.Text).ToList(); // Alphabetisch sortiert
+                var tmpCountAbsteigend = words.OrderBy(x => -x.Count).ToList();  // Absteigend nach Count sortiert
+                var tmpCountAufsteigend = words.OrderBy(x => x.Count).ToList();  // Aufsteigend nach Count sortiert
             }
 
+            //TODO: Das ist ein TEST "TODO: Kommentare/ Aufgabenliste"           // Es werden alle "TODO"-Angezeigt
 
             string stopStop = "---STOP---STOP---STOP---";
         }
