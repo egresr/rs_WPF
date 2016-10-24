@@ -45,8 +45,6 @@ namespace WordCounter
                                                                                                            // und die getrennte Woerter in
                                                                                                            // array "parts" speichern.
 
-                lblTest.Content = dialog.FileName;
-
                 List<Word> words = new List<Word>();    
 
                 for (int i = 0; i < parts.Length; i++) // fuer jeden element aus Array "parts"

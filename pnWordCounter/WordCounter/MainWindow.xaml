@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordCounter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Text analyse" Height="350" Width="525">
     <Grid>
-        <Button x:Name="btnAnalyse" Content="Text analysieren ..." HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="145" Click="btnAnalyse_Click"/>
-        <Label x:Name="lblTest" Content="Label" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="497"/>
-        <TextBox x:Name="txtBx" HorizontalAlignment="Left" Height="209" Margin="10,100,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="497"/>
+        <Button x:Name="btnAnalyse" Content="Text analysieren ..." HorizontalAlignment="Left" Margin="179,144,0,0" VerticalAlignment="Top" Width="145" Click="btnAnalyse_Click"/>
 
     </Grid>
 </Window>
