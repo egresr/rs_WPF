@@ -12,9 +12,9 @@ namespace Wecker
         byte stunden;
         byte minuten;
 
-        public string Title { get; set; }
-        public byte Stunden { get; set; }
-        public byte Minuten { get; set; }
+        //public string Title { get; set; }
+        //public byte Stunden { get; set; }
+        //public byte Minuten { get; set; }
 
         public Termin(string title, byte stunden, byte minuten)
         {
@@ -27,6 +27,6 @@ namespace Wecker
         {
 
             return stunden.ToString("D2") + ":" + minuten.ToString("D2") + "\t" + title; // Ueberschreiben von ToSting
-        }
+        }                                                                                // und formatierte string Convertierung
     }
 }

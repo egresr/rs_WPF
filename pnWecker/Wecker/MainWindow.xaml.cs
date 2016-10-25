@@ -30,16 +30,19 @@ namespace Wecker
             Termin termin;
             try
             {
-                    byte stunden = Convert.ToByte(txtBxStunden.Text);
-                    byte minuten = Convert.ToByte(txtBxMinuten.Text);
-                    if ((stunden <= 23 && stunden >= 0) && (minuten <= 59 && minuten >= 0))
-                    {
-                        termin = new Termin(txtBxTitel.Text, stunden, minuten);
-                        txtBxTitel.Text = "";
-                        txtBxStunden.Text = "";
-                        txtBxMinuten.Text = "";
-                        lstBxTermine.Items.Add(termin.ToString());
-                    }
+                //byte bspStunden;
+                //bool bspConvertierung = byte.TryParse(txtBxStunden.Text, out bspStunden);  // BSP TryParse konvertierung
+
+                byte stunden = Convert.ToByte(txtBxStunden.Text);
+                byte minuten = Convert.ToByte(txtBxMinuten.Text);
+                if ((stunden <= 23 && stunden >= 0) && (minuten <= 59 && minuten >= 0))
+                {
+                    termin = new Termin(txtBxTitel.Text, stunden, minuten); // 
+                    txtBxTitel.Text = "";
+                    txtBxStunden.Text = "";
+                    txtBxMinuten.Text = "";
+                    lstBxTermine.Items.Add(termin.ToString());
+                }
                 else
                 {
                     MessageBox.Show(/*TODO:...*/"Fehler");
@@ -47,13 +50,15 @@ namespace Wecker
             }
             catch (Exception)
             {
-                MessageBox.Show(/*TODO:...*/"Fehler");
+                MessageBox.Show(/*TODO:...*/"Fehler CATCH");
             }
+        }
 
-
-
-
-
+        private void btnTerminLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            int i = lstBxTermine.SelectedIndex; // "index" von ausgewaehlten Element aus ListBox
+            if (i >= 0)
+                lstBxTermine.Items.RemoveAt(i); // entfernt das Element am angegebenen Index 
         }
     }
 }

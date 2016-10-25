@@ -9,7 +9,7 @@
     <Grid Margin="1,0,-1,0">
         <ListBox x:Name="lstBxTermine" HorizontalAlignment="Left" Height="204" Margin="10,23,0,0" VerticalAlignment="Top" Width="263"/>
         <Button x:Name="btnTerminHinzufuegen" Content="Termin hinzufügen" HorizontalAlignment="Left" Margin="26,246,0,0" VerticalAlignment="Top" Width="147" Click="btnTerminHinzufuegen_Click"/>
-        <Button x:Name="btnTerminLoeschen" Content="Termin löschen" HorizontalAlignment="Left" Margin="26,282,0,0" VerticalAlignment="Top" Width="147"/>
+        <Button x:Name="btnTerminLoeschen" Content="Termin löschen" HorizontalAlignment="Left" Margin="26,282,0,0" VerticalAlignment="Top" Width="147" Click="btnTerminLoeschen_Click"/>
         <TextBox x:Name="txtBxTitel" HorizontalAlignment="Left" Height="23" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
         <TextBox x:Name="txtBxStunden" HorizontalAlignment="Left" Height="23" Margin="311,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
         <TextBox x:Name="txtBxMinuten" HorizontalAlignment="Left" Height="23" Margin="411,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
