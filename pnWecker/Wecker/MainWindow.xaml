@@ -7,15 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid Margin="1,0,-1,0">
-        <ListBox x:Name="lstBxTermine" HorizontalAlignment="Left" Height="204" Margin="10,23,0,0" VerticalAlignment="Top" Width="191"/>
-        <Button x:Name="btnTerminHinzufuegen" Content="Termin hinzufügen" HorizontalAlignment="Left" Margin="26,246,0,0" VerticalAlignment="Top" Width="147"/>
+        <ListBox x:Name="lstBxTermine" HorizontalAlignment="Left" Height="204" Margin="10,23,0,0" VerticalAlignment="Top" Width="263"/>
+        <Button x:Name="btnTerminHinzufuegen" Content="Termin hinzufügen" HorizontalAlignment="Left" Margin="26,246,0,0" VerticalAlignment="Top" Width="147" Click="btnTerminHinzufuegen_Click"/>
         <Button x:Name="btnTerminLoeschen" Content="Termin löschen" HorizontalAlignment="Left" Margin="26,282,0,0" VerticalAlignment="Top" Width="147"/>
-        <TextBox x:Name="txtBxTitel" HorizontalAlignment="Left" Height="23" Margin="215,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
-        <TextBox x:Name="txtBxStunden" HorizontalAlignment="Left" Height="23" Margin="250,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
-        <TextBox x:Name="txtBxMinuten" HorizontalAlignment="Left" Height="23" Margin="350,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
-        <Label x:Name="label" Content="Titel" HorizontalAlignment="Left" Margin="215,39,0,0" VerticalAlignment="Top" Width="33"/>
-        <Label x:Name="label_Copy" Content="Stunden" HorizontalAlignment="Left" Margin="250,153,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label x:Name="label_Copy1" Content="Minuten" HorizontalAlignment="Left" Margin="350,153,0,0" VerticalAlignment="Top" Width="56"/>
+        <TextBox x:Name="txtBxTitel" HorizontalAlignment="Left" Height="23" Margin="287,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtBxStunden" HorizontalAlignment="Left" Height="23" Margin="311,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
+        <TextBox x:Name="txtBxMinuten" HorizontalAlignment="Left" Height="23" Margin="411,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73"/>
+        <Label x:Name="label" Content="Titel" HorizontalAlignment="Left" Margin="287,39,0,0" VerticalAlignment="Top" Width="33"/>
+        <Label x:Name="label_Copy" Content="Stunden" HorizontalAlignment="Left" Margin="311,146,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label x:Name="label_Copy1" Content="Minuten" HorizontalAlignment="Left" Margin="411,146,0,0" VerticalAlignment="Top" Width="56"/>
 
     </Grid>
 </Window>

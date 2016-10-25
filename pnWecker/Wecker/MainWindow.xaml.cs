@@ -24,5 +24,36 @@ namespace Wecker
         {
             InitializeComponent();
         }
+
+        private void btnTerminHinzufuegen_Click(object sender, RoutedEventArgs e)
+        {
+            Termin termin;
+            try
+            {
+                    byte stunden = Convert.ToByte(txtBxStunden.Text);
+                    byte minuten = Convert.ToByte(txtBxMinuten.Text);
+                    if ((stunden <= 23 && stunden >= 0) && (minuten <= 59 && minuten >= 0))
+                    {
+                        termin = new Termin(txtBxTitel.Text, stunden, minuten);
+                        txtBxTitel.Text = "";
+                        txtBxStunden.Text = "";
+                        txtBxMinuten.Text = "";
+                        lstBxTermine.Items.Add(termin.ToString());
+                    }
+                else
+                {
+                    MessageBox.Show(/*TODO:...*/"Fehler");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(/*TODO:...*/"Fehler");
+            }
+
+
+
+
+
+        }
     }
 }
