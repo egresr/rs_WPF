@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VokabelTrainer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="VokabelTrainer" Height="350" Width="525">
     <Grid>
-        
+        <Label x:Name="lblAbfrage" Content="---" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="210"/>
+        <TextBox x:Name="txtBxAngabe" HorizontalAlignment="Left" Height="23" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218"/>
+        <Button x:Name="btnTest" Content="Test" HorizontalAlignment="Left" Margin="75,91,0,0" VerticalAlignment="Top" Width="75" Click="btnTest_Click"/>
+        <Label x:Name="label" Content="Richtig :" HorizontalAlignment="Left" Margin="332,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblZaehlerRichtig" Content="0" HorizontalAlignment="Left" Margin="404,154,0,0" VerticalAlignment="Top" Background="LightGreen"/>
+        <Label x:Name="label_Copy" Content="Falsch :" HorizontalAlignment="Left" Margin="332,194,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblZaehlerFalsch" Content="0" HorizontalAlignment="Left" Margin="404,194,0,0" VerticalAlignment="Top" Background="LightCyan"/>
+        <Label x:Name="label1" Content="Letzte Abfrage am:" HorizontalAlignment="Left" Margin="332,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDatumLetzteAbfrage" Content="---" HorizontalAlignment="Left" Margin="332,111,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label x:Name="label1_Copy" Content="Hinzugefügt am:" HorizontalAlignment="Left" Margin="332,11,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDatumHinzugefuegt" Content="---" HorizontalAlignment="Left" Margin="332,42,0,0" VerticalAlignment="Top" Width="137"/>
+
     </Grid>
 </Window>
