@@ -19,7 +19,7 @@ namespace VokabelTrainer
         {
             get { return deutchesWort; }
             set { }
-        } 
+        }
 
         public int ZahlKorrekteAbfragen
         {
@@ -54,14 +54,31 @@ namespace VokabelTrainer
 
             if (englischeUebersetzung == text)
             {
-                zahlKorrekterAbfragen ++;
+                zahlKorrekterAbfragen++;
                 return true;
             }
             else
             {
-                zahlFehlgeschlagenerAbfragen ++;
+                zahlFehlgeschlagenerAbfragen++;
                 return false;
-            }  
+            }
+        }
+
+        public bool PruefeWarteZeit()
+        {
+            if (letzteAbfrage != null)
+                return DateTime.Now - letzteAbfrage >= TimeSpan.FromSeconds(600);
+            else
+                return false;
+        }
+
+        public double BerechneErfolgsquote()
+        {
+            //return (double)zahlKorrekterAbfragen / zahlKorrekterAbfragen + zahlFehlgeschlagenerAbfragen;
+            if (ZahlKorrekteAbfragen + zahlFehlgeschlagenerAbfragen > 0)
+                return (double)ZahlKorrekteAbfragen * 100 / (ZahlKorrekteAbfragen + zahlFehlgeschlagenerAbfragen);
+
+            return 0.00;
         }
     }
 }
