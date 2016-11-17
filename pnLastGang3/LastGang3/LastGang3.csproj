@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LeistungAbfrage.cs" />
+    <Compile Include="Nachtleuchter.cs" />
+    <Compile Include="Verbraucher.cs" />
+    <Compile Include="Waschmaschine.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

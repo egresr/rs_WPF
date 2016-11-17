@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LastGang3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="800">
     <Grid>
-        
+        <Button x:Name="buttonAllesAn" Content="OFF" HorizontalAlignment="Left" Margin="110,25,0,0" VerticalAlignment="Top" Width="30" Click="buttonAllesAn_Click"/>
+        <Button x:Name="buttonNachtLeuchter" Content="OFF" HorizontalAlignment="Left" Margin="110,69,0,0" VerticalAlignment="Top" Background="Yellow" Width="30" Click="buttonNachtLeuchter_Click"/>
+        <Button x:Name="buttonWaschmaschine" Content="OFF" HorizontalAlignment="Left" Margin="110,118,0,0" VerticalAlignment="Top" Width="30"/>
+        <Canvas x:Name="canvasGrafik" Background="LightGray" HorizontalAlignment="Left" Height="290" Margin="160,10,0,0" VerticalAlignment="Top" Width="622"/>
+        <Button x:Name="buttonGrafik" Content="Grafik" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Width="120" Click="buttonGrafik_Click"/>
+        <Label x:Name="label" Content="Alle" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy" Content="Nachtleuchter" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="Waschmaschine" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,2.788"/>
     </Grid>
 </Window>

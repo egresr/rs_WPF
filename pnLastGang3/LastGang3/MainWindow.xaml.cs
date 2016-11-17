@@ -20,9 +20,36 @@ namespace LastGang3
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Verbraucher> verbraucher;
+        Nachtleuchter nachtLeuchter;
+        LeistungAbfrage leistungAbfrage;
         public MainWindow()
         {
             InitializeComponent();
+            verbraucher = new List<Verbraucher>();
+            nachtLeuchter = new Nachtleuchter();
+            leistungAbfrage = new LeistungAbfrage();
+
+            verbraucher.Add(nachtLeuchter);
+
+
+        }
+
+        private void buttonAllesAn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonNachtLeuchter_Click(object sender, RoutedEventArgs e)
+        {            
+            Button button = sender as Button;
+            nachtLeuchter.Aktiviere(60, button);
+        }
+
+        private void buttonGrafik_Click(object sender, RoutedEventArgs e)
+        {
+            
+            leistungAbfrage.Berechne(nachtLeuchter);
         }
     }
 }
